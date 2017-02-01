@@ -589,7 +589,7 @@ public class CameraSource {
     
     public boolean setColorsInverted(boolean invert) {
                 synchronized (mCameraLock) {
-            if (mCamera != null && mode != null) {
+            if (mCamera != null) {
                 Camera.Parameters parameters = mCamera.getParameters();
                 if (invert) {
                     parameters.setColorEffect(Camera.Parameters.EFFECT_NEGATIVE);   
