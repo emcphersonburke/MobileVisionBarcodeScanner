@@ -104,7 +104,7 @@ abstract public class BarcodeFragment extends Fragment {
     }
     
     public void setShouldInvert(boolean shouldInvert) {
-        this.shouldInvert = shouldInvert
+        this.shouldInvert = shouldInvert;
     }
 
     public boolean supportMultipleScan() {
