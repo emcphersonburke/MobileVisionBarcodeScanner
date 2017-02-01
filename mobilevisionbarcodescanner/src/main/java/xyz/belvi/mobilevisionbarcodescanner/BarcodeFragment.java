@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 abstract public class BarcodeFragment extends Fragment {
 
-    private boolean shouldShowText, multipleScan, showDrawRect, touchAsCallback, shouldFocus, showFlash;
+    private boolean shouldShowText, multipleScan, showDrawRect, touchAsCallback, shouldFocus, showFlash, shouldInvert;
 
     private Integer[] rectColors;
 
@@ -25,6 +25,7 @@ abstract public class BarcodeFragment extends Fragment {
         super.onInflate(context, attrs, savedInstanceState);
         TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.gvb);
         showFlash = a.getBoolean(R.styleable.gvb_gvb_flash, false);
+        shouldInvert = a.getBoolean(R.styleable.gvb_gvb_invert, false);
         showDrawRect = a.getBoolean(R.styleable.gvb_gvb_draw, false);
         shouldShowText = a.getBoolean(R.styleable.gvb_gvb_show_text, false);
         shouldFocus = a.getBoolean(R.styleable.gvb_gvb_auto_focus, false);
@@ -96,6 +97,14 @@ abstract public class BarcodeFragment extends Fragment {
 
     public void setShowFlash(boolean showFlash) {
         this.showFlash = showFlash;
+    }
+    
+    public boolean isShouldInvert() {
+        return this.shouldInvert;
+    }
+    
+    public void setShouldInvert(boolean shouldInvert) {
+        this.shouldInvert = shouldInvert
     }
 
     public boolean supportMultipleScan() {
