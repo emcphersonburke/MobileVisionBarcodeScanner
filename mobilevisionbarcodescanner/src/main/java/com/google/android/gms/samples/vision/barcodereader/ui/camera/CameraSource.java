@@ -597,6 +597,7 @@ public class CameraSource {
                     parameters.setColorEffect(Camera.Parameters.EFFECT_NONE);   
                 }
                 mCamera.setParameters(parameters);
+                return true;
             }
 
             return false;
